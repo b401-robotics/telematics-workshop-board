@@ -1,6 +1,6 @@
 # **Firmware**
 
-This folder contains the firmware for the ESP8266 Minimum System Workshop Telematics 2024.
+This folder contains the firmware for the Telematics Workshop Board. The firmware is based on the ESP8266 microcontroller and uses the Arduino framework for development.
 
 ## 🚀 Getting Started
 
