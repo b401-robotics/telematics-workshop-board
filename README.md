@@ -20,7 +20,7 @@ The following are the features available on this board.
 - 8 GPIO Pins
 - Programmable RGB LED
 - Overcurrent Protection
-- USB Type-C Connector (_Support Power Delivery_) 
+- USB Type-C Connector (_Power Delivery Support_) 
 
 ## 👀 Preview
 
