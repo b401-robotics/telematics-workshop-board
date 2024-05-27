@@ -25,4 +25,6 @@ This folder contains the firmware for the Telematics Workshop Board. The firmwar
    cd firmware
    code .
    ```
+3. Build and upload the firmware to the board
 
+## 
