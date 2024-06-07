@@ -20,8 +20,9 @@ EasyButton button(BUTTON_PIN);  // Button Object
 
 /* Function Prototype */
 void buttonPressed();        // Function to handle button press
-void buttonDoubleClicked();  // Function to handle double click
 void buttonLongPressed();    // Function to handle long press
+void buttonDoubleClicked();  // Function to handle double click
+void buttonTripleClicked();  // Function to handle triple click
 
 void setup() {
     /* Initialize Serial Monitor */
@@ -36,6 +37,7 @@ void setup() {
     button.onPressed(buttonPressed);
     button.onPressedFor(500, buttonLongPressed);
     button.onSequence(2, 500, buttonDoubleClicked);
+    button.onSequence(3, 500, buttonTripleClicked);
 
     /* you can add your code here */
 }
@@ -54,6 +56,13 @@ void buttonPressed() {
     FastLED.show();
 }
 
+void buttonLongPressed() {
+    Serial.printf("Button Long Pressed\n");
+
+    leds[0] = CRGB::Red;
+    FastLED.show();
+}
+
 void buttonDoubleClicked() {
     Serial.printf("Button Double Clicked\n");
 
@@ -61,9 +70,9 @@ void buttonDoubleClicked() {
     FastLED.show();
 }
 
-void buttonLongPressed() {
-    Serial.printf("Button Long Pressed\n");
+void buttonTripleClicked() {
+    Serial.printf("Button Triple Clicked\n");
 
-    leds[0] = CRGB::Red;
+    leds[0] = CRGB::Black;
     FastLED.show();
 }
