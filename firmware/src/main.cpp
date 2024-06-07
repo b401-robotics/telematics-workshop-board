@@ -4,8 +4,6 @@
 - This code is for Wortel Development Board V2.
 - This code is for beginners who want to learn how to program Wortel Development Board.
 - And guess what? It's compatible with both PlatformIO and Arduino IDE!
-
-P.S. This Code Written by Faris 😊 (https://www.farisrfp.me)
 */
 
 #include <Arduino.h>     // Standard Arduino library
@@ -14,7 +12,7 @@ P.S. This Code Written by Faris 😊 (https://www.farisrfp.me)
 
 /* Variable Declaration */
 #define BUTTON_PIN 0  // Button Pin
-#define LED_PIN 2     // RGB LED Pin
+#define LED_PIN D5    // RGB LED Pin
 #define NUM_LEDS 1    // Number of RGB LED
 
 CRGB leds[NUM_LEDS];            // RGB LED Array
@@ -27,7 +25,8 @@ void buttonLongPressed();    // Function to handle long press
 
 void setup() {
     /* Initialize Serial Monitor */
-    Serial.begin(9600);
+    Serial.begin(115200);
+    randomSeed(analogRead(A0));
 
     /* Initialize RGB LED */
     FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
@@ -51,7 +50,7 @@ void buttonPressed() {
     Serial.printf("Button Pressed\n");
 
     /* Generate Random Color */
-    leds[0] = CRGB(random(255), random(255), random(255));
+    leds[0] = CRGB(random(126), random(126), random(126));
     FastLED.show();
 }
 
